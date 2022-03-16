@@ -1,0 +1,38 @@
+.profile-container {
+    color: rgb(77, 92, 101);
+    display: flex;
+
+    .profile-container--avatar img {
+        width: 180px;
+        height: 180px;
+        background-position: top;
+        background-size: cover;
+        border-radius: 100%;
+        margin-right: 20px;
+    }
+
+    .profile-container--data {
+        .title {
+            margin: 0 0 8px;
+        }
+
+        .area {
+            color: #4699ff;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .star.checked {
+            color: orange;
+        }
+
+        .price {
+            font-weight: 500;
+        }
+    }
+}
+
+.description {
+    color: rgb(77, 92, 101);
+    font-size: 14px;
+}
