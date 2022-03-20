@@ -1,0 +1,50 @@
+<div class="schedule">
+	<div class="schedule--title">
+		<h2>Schedule your session!</h2>
+		<small>Timezone: Lisbon (+1)</small>
+	</div>
+	<div class="schedule--days">
+		<div  class="day">
+			<button mat-icon-button color="primary"
+			[disabled]="startDate.isSame(availabilitySlots.at(0).startDay, 'week')"
+			(click)="prevWeek()">
+				<mat-icon>chevron_left</mat-icon>
+			</button> 
+		</div>
+		<div class="day" *ngFor="let item of availabilitySlots; let i = index">
+			<small>{{ item.startDay | date:'E' }}</small>
+			<span>{{ item.startDay | date:'MMM d'}}</span> 
+		</div>
+		<div  class="day">
+			<button mat-icon-button color="primary" (click)="nextWeek()">
+				<mat-icon>chevron_right</mat-icon>
+			</button>
+		</div>
+	</div>
+
+	<div class="schedule--hours" *ngIf="hasEmpty.length > 0 && !loading ">
+		<div></div>
+		<div *ngFor="let slots of availabilitySlots; let slotIndex = index">
+			<div *ngFor="let item of slots.availableHours; let hourIndex = index">
+				<div matRipple  
+					*ngIf=" validatePastHours(slots.startDay, item.hour)"
+					(click)="selectedItem(slotIndex, hourIndex)" 
+					[class.checked]="selectedParent == slotIndex && selectedChild == hourIndex"
+					class="hour" >
+					{{ item.hour }}
+				</div>
+			</div>
+		</div>
+		<div></div>
+	</div>
+
+	<div class="blankslate" *ngIf="hasEmpty.length < 1 && !loading">
+		<img  rel="preload" as="image"  width="40%" src="../../../assets/images/empty-schedule.svg" alt="empty data">
+		<h4 [innerHTML]="blankslateMessage"></h4>
+	</div>
+
+	<div class="loading" *ngIf="loading">
+		<mat-spinner  [diameter]="80"></mat-spinner>
+		<p>Buscando horários disponíveis</p>
+	</div>
+</div>

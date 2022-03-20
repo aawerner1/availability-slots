@@ -1,6 +1,14 @@
+$primary-color: #3f51b5;
+
+:host {
+    max-width: 500px;
+    min-width: 400px;
+    margin: 0 20px;
+}
+
 .profile-container {
-    color: rgb(77, 92, 101);
     display: flex;
+    
 
     .profile-container--avatar img {
         width: 180px;
@@ -17,8 +25,8 @@
         }
 
         .area {
-            color: #4699ff;
-            font-weight: 500;
+            color: $primary-color;
+            font-weight: 600;
             text-transform: uppercase;
         }
 
@@ -33,6 +41,6 @@
 }
 
 .description {
-    color: rgb(77, 92, 101);
     font-size: 14px;
+    margin-top: 20px;
 }

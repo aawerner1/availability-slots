@@ -8,11 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProfessionalProfileComponent implements OnInit {
 
-  numberOfstars = new Array(5);
+  numberOfStars = new Array(5);
   @Input() profile!: ProfessionalProfile;
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

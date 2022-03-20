@@ -1,24 +1,26 @@
-import { ProfessionalProfileComponent } from './components/professional-profile/professional-profile.component';
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
+import { ProfessionalsModule } from './modules/professionals.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    ProfessionalProfileComponent,
     AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    ProfessionalsModule,
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'R$ ' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
