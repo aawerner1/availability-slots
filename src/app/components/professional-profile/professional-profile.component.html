@@ -1,19 +1,19 @@
 <div class="profile-container">
 	<div class="profile-container--avatar">
-		<img [src]="profile.avatarURL" alt="">
+		<img [src]="profile.avatarURL" alt="Picture">
 	</div>
 	<div class="profile-container--data">
 		<h1 class="title">{{profile.firstName}} {{profile.lastName}}</h1>
 		<small class="area">{{profile.area}}</small><small> | {{profile.city}}</small>
 		<div>
-			<span *ngFor="let item of numberOfstars; let i = index" 
+			<span *ngFor="let item of numberOfStars; let i = index" 
 				class="star fa fa-star" 
 				[ngClass]="{'checked': i < profile.stars}">
 			</span>			
 				
 			<small> ({{profile.reviews}} reviews)</small>
 		</div>
-		<p class="price">{{profile.pricePerHour | currency: 'BRL':true:'1.2-2' }} / <small>50 MINUTES</small></p>
+		<p class="price">{{profile.pricePerHour | currency }} / <small>50 MINUTES</small></p>
 	</div>	
 </div>
 <p class="description">{{profile.description}}</p>

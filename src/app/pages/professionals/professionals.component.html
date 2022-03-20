@@ -1,0 +1,10 @@
+<div class="container" *ngIf="!loading">
+  <app-professional-profile [profile]="professionalProfile"></app-professional-profile>
+  <app-appointment-schedule 
+    [startDate]="startDate"
+    [availabilitySlots]="availabilitySlots"
+    (changeDate)="getSchedule($event.startDate, $event.endDate)"
+    [blankslateMessage]="blankslateMessage"
+    ></app-appointment-schedule>
+</div>
+

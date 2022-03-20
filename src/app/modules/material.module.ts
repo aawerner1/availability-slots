@@ -34,7 +34,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   imports: [
@@ -71,6 +71,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     MatSortModule,
     MatPaginatorModule,
     MatNativeDateModule,
+    MatRippleModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -106,6 +107,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     MatSortModule,
     MatPaginatorModule,
     MatNativeDateModule,
+    MatRippleModule
   ],
 })
 export class MaterialModule { }
